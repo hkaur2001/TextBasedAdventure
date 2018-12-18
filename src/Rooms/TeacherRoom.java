@@ -24,11 +24,11 @@ public class TeacherRoom extends Room  {
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
-        boolean hasKey = false;
+        boolean gotkey = false;
         if (x.HW == true){
-            hasKey = true;
+            gotkey = true;
         }
-        if (hasKey){
+        if (gotkey){
             String [][] math = {{"What is a comparison using like or as?","2*3+1*0","What type of word is run?","999/9","0!","What is the powerhouse of the cell?","What does a plant cell contain that an animal cell does not?"},{"simile","6","verb","111","1","mitochondria","chloroplasts"}};
             int rand = (int)((Math.random()*7));
             System.out.println("Your teacher will ask questions to validate HW!");
@@ -47,7 +47,7 @@ public class TeacherRoom extends Room  {
                     strikesavailable = false;
                     correctAnswer=true;
                 } else {
-                    System.out.println("Try again!");
+                    System.out.println("Hmmm are you sure you did the hw? try again.");
                     x.strike = x.strike-1;
                     System.out.println("Your health is now: " + ""+x.strike);
                     ans = in.nextLine();
@@ -55,7 +55,7 @@ public class TeacherRoom extends Room  {
             }
         }
         else{
-            System.out.println("Complete HW!");
+            System.out.println("Hi student why don't you have your hw? Come back to me with your completed hw!");
         }
     }
     /*

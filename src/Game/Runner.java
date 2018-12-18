@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Runner {
     private static boolean gameOn = true;
     /*
-    Initiates the board and game
+    intro to game initiates the board
      */
     public static void main(String[] args)
     {
@@ -18,17 +18,16 @@ public class Runner {
         map1[0][0].enterRoom(player1);
         Scanner in = new Scanner(System.in);
         System.out.print("Hi Student! In this game, try to collect your hw and get a hall pass to avoid getting bad strikes.  "+"\n");
-        System.out.print("You are going through the hallway and trying to visit teachers to validate your hw completion"+"\n");
-        System.out.print("For credit for hw answer the questions correctly or get a negative strike reducing strike score by 1"+"\n");
+        System.out.print("You are going through the hallway and trying to visit teachers to validate your hw completion by answering their questions correctly."+"\n");
         System.out.print("When you get to a Dean interaction answer their questions correctly to avoid getting strikes"+"\n");
-        System.out.print("You start with 10 possible strikes with each wrong answer as -1.  If you hit zero game ends you are a bad student;("+"\n");
+        System.out.print("You start with 10 possible strikes with each wrong answer as -1.  If you hit zero game ends :("+"\n");
         /*
-        Game begins
+        Game starts
          */
         while(gameOn)
         {
-            map.print();
-            map.didWin();
+            map.board();
+            map.wins();
             System.out.println("Where would you like to move? (Choose N, E, S, W)");
             String move = in.nextLine();
             if(validMove(move, player1, map1))
@@ -38,12 +37,12 @@ public class Runner {
             else {
                 System.out.println("Please choose a valid move.");
             }
-            map.didWin();
+            map.wins();
         }
         in.close();
     }
     /*
-    Controls for game
+    Game controls
      */
     public static boolean validMove(String move, Person p, Room[][] map)
     {
@@ -101,7 +100,7 @@ public class Runner {
         return true;
     }
     /*
-game ends     */
+gamgame over     */
     public static void gameOff()
     {
         gameOn = false;

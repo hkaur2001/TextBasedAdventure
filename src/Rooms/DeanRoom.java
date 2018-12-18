@@ -18,11 +18,11 @@ import java.util.Scanner;
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
-        boolean hasKey = false;
+        boolean gotkey = false;
         if (x.HallPass == true){
-            hasKey = true;
+            gotkey = true;
         }
-        if (hasKey == true){
+        if (gotkey == true){
             String [][] math = {{"Do you have a hall pass?","How many minutes after the bell rings can you use the bathroom?","What period do you have lunch?","Is it ok to use the teacher elevators?"},{"yes","10","fourth","no",}};
             int rand = (int)((Math.random()*4));
             System.out.println("Uh oh a Dean! They will inquire about your schedule and school policy!");
@@ -41,7 +41,7 @@ import java.util.Scanner;
                     strikesavailable = false;
                     correctAnswer=true;
                 } else {
-                    System.out.println("Keep trying!");
+                    System.out.println("Hmmm are you sure now? Try again.");
                     x.strike = x.strike-1;
                     System.out.println("Your strike level is now " + ""+x.strike);
                     ans = in.nextLine();
@@ -49,7 +49,7 @@ import java.util.Scanner;
             }
         }
         else{
-            System.out.println("Get the hall pass!");
+            System.out.println("Hi student why are you here without a hall pass? Go get a hall pass!");
         }
     }
     /*

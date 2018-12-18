@@ -1,8 +1,7 @@
 package Items;
 import People.Person;
 /*
-Interface for determining if player has key
- */
+their are two items that would be keys including the hall pass and the hw  */
 public interface Key {
-    boolean hasKey(Person x);
+    boolean gotkey(Person x);
 }

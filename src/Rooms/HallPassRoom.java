@@ -7,7 +7,7 @@ public class HallPassRoom extends Room implements Key {
     public HallPassRoom(int x, int y){
         super(x,y);
     }
-    public boolean hasKey(Person x) {
+    public boolean gotkey(Person x) {
         if (hasbeen == true){
             x.HallPass = true;
         }
@@ -23,7 +23,7 @@ public class HallPassRoom extends Room implements Key {
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
         hasbeen = true;
-        hasKey(x);
+        gotkey(x);
         System.out.println("This room contains a hall pass! Now you will not get in trouble if a dean spots you.");
     }
     /**

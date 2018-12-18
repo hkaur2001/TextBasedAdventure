@@ -11,7 +11,7 @@ public class TeacherHWRoom extends Room implements Key {
     /*
    PLayer collects hw
      */
-    public boolean hasKey(Person x) {
+    public boolean gotkey(Person x) {
         if (hasbeen == true){
             x.HW = true;
         }
@@ -24,7 +24,7 @@ public class TeacherHWRoom extends Room implements Key {
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
         hasbeen = true;
-        hasKey(x);
+        gotkey(x);
         System.out.println("This room contains your completed homework.  Now use this hw to correctly answer a teacher's questions.");
     }
     /**

@@ -58,7 +58,7 @@ public class Board {
             map[q][t] = new TeacherRoom(q, t);
 
         }
-        //Generates location of both keys
+        //location of the hall pass and the completed hw is created
         int s = rand();
         int d = rand();
         map[s][d] = new TeacherHWRoom(s, d);
@@ -69,9 +69,9 @@ public class Board {
     }
 
     /**
-     * Prints out the board row by row
+     * the board is printed by rows
      */
-    public void print() {
+    public void board() {
         String row = "";
         for (int i = 0; i < map.length; i++) {
             row = " ";
@@ -82,9 +82,9 @@ public class Board {
         }
     }
     /*
-    Determines if the player has killed all zombies and ghosts
+    checks to see the player is done visiting the teachers and the deans rooms
      */
-    public void didWin(){
+    public void wins(){
         boolean win = true;
         for( int x = 0; x < map.length; x++){
             for (int y = 0; y < map[0].length; y++){
@@ -99,7 +99,7 @@ public class Board {
         }
     }
     /*
-    Generates a random number for constructor
+    makes a random number for the constructor to use each time
      */
     public static int rand() {
         int a = (int) (Math.random() * map.length);
