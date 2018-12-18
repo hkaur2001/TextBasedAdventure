@@ -6,61 +6,44 @@ import Rooms.Room;
 import java.util.Scanner;
 
 public class Runner {
-
-
     private static boolean gameOn = true;
-
+    /*
+    Initiates the board and game
+     */
     public static void main(String[] args)
     {
-        Room[][] building = new Room[5][5];
-
-        //Fill the building with normal rooms
-        for (int x = 0; x<building.length; x++)
-        {
-            for (int y = 0; y < building[x].length; y++)
-            {
-                building[x][y] = new Room(x,y);
-            }
-        }
-
-        //Create a random winning room.
-        int x = (int)(Math.random()*building.length);
-        int y = (int)(Math.random()*building.length);
-        building[x][y] = new Room(x, y);
-
-        //Create a random Toy Room
-        int z = (int)(Math.random()*building.length);
-        int w = (int)(Math.random()*building.length);
-        building[z][w] = new Rooms.Math_Major (z,w);
-
-        //Setup player 1 and the input scanner
-        Person player1 = new Person("FirstName", "FamilyName", 0,0);
-        building[0][0].enterRoom(player1);
+        Room[][]map1 = new Room[8][8];
+        Board map = new Board(map1);
+        Person player1 = new Person(0,0);
+        map1[0][0].enterRoom(player1);
         Scanner in = new Scanner(System.in);
+        System.out.print("Hello! In this game, you are trying to get to math class but you do not have a hall pass so you do not want to get caught by one of the deans.  move around the board, and collect two keys, the ZombieKey and the GhostKey!"+"\n");
+        System.out.print("Then, find all the rooms containing zombies and ghosts!"+"\n");
+        System.out.print("To defeat them, answer their math question!"+"\n");
+        System.out.print("You start with a 10 health bar, everytime you get a question wrong, it decreases by 2. It's game over if you die!"+"\n");
+        System.out.print("To win, defeat all zombies and ghosts! Good luck!"+"\n");
+        /*
+        Game operates
+         */
         while(gameOn)
         {
-            System.out.println("Where would you like to move? (Choose N, S, E, W)");
+            map.print();
+            map.didWin();
+            System.out.println("Where would you like to move? (Choose N, E, S, W)");
             String move = in.nextLine();
-            if(validMove(move, player1, building))
+            if(validMove(move, player1, map1))
             {
                 System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
-
             }
             else {
                 System.out.println("Please choose a valid move.");
             }
-
-
+            map.didWin();
         }
         in.close();
     }
-
-    /**
-     * Checks that the movement chosen is within the valid game map.
-     * @param move the move chosen
-     * @param p person moving
-     * @param map the 2D array of rooms
-     * @return
+    /*
+    Controls for game
      */
     public static boolean validMove(String move, Person p, Room[][] map)
     {
@@ -114,15 +97,14 @@ public class Runner {
                 }
             default:
                 break;
-
         }
         return true;
     }
+    /*
+    Turns off game
+     */
     public static void gameOff()
     {
         gameOn = false;
     }
-
-
-
 }

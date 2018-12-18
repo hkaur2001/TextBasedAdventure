@@ -1,30 +1,31 @@
 package Rooms;
 
+import Items.Key;
 import People.Person;
 
-public class Room {
-    Person occupant;
-    public boolean hasbeen = false;
-    int xLoc,yLoc;
-
-    public Room(int x, int y)
-    {
-        xLoc = x;
-        yLoc = y;
+public class HallPassRoom extends Room implements Key {
+    public HallPassRoom(int x, int y){
+        super(x,y);
     }
-
+    public boolean hasKey(Person x) {
+        if (hasbeen == true){
+            x.HallPass = true;
+        }
+        return x.HallPass;
+    }
     /**
      * Method controls the results when a person enters this room.
      * @param x the Person entering
      */
     public void enterRoom(Person x)
     {
-        System.out.println("You entered an empty room no dean to be scared of here!");
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
+        hasbeen = true;
+        hasKey(x);
+        System.out.println("This room contains a hall pass! Now you will not get in trouble if a dean spots you.");
     }
-
     /**
      * Removes the player from the room.
      * @param x
@@ -33,15 +34,11 @@ public class Room {
     {
         occupant = null;
     }
-    /*Prints if player has been there
-     */
     public String toString(){
         if (hasbeen){
             return "[#]";}
         else{
-            return "[ ]";
+            return "{Pass}";
         }
     }
-
 }
-
