@@ -37,7 +37,7 @@ public class TeacherRoom extends Room  {
             String ans = in.nextLine();
             boolean correctAnswer=false;
             while (correctAnswer == false){
-                if (x.health <= 0){
+                if (x.strike <= 0){
                     System.out.println("Uh oh too many wrong strikes! Games over");
                     Runner.gameOff();
                     break;
@@ -48,8 +48,8 @@ public class TeacherRoom extends Room  {
                     correctAnswer=true;
                 } else {
                     System.out.println("Try again!");
-                    x.health = x.health-2;
-                    System.out.println("Your health is now: " + ""+x.health);
+                    x.strike = x.strike-1;
+                    System.out.println("Your health is now: " + ""+x.strike);
                     ans = in.nextLine();
                 }
             }

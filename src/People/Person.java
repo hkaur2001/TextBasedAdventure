@@ -2,7 +2,7 @@ package People;
 import Items.Key;
 public class Person {
     int xLoc, yLoc;
-    public int health = 10;
+    public int strike = 10;
     public boolean HW = false;
     public boolean HallPass = false;
     public int getxLoc() {

@@ -31,7 +31,7 @@ import java.util.Scanner;
             String ans = in.nextLine();
             boolean correctAnswer=false;
             while (correctAnswer == false){
-                if (x.health <= 0){
+                if (x.strike <= 0){
                     System.out.println("You got too many strikes bad student :( game over");
                     Runner.gameOff();
                     break;
@@ -42,8 +42,8 @@ import java.util.Scanner;
                     correctAnswer=true;
                 } else {
                     System.out.println("Keep trying!");
-                    x.health = x.health-2;
-                    System.out.println("Your strike level is now " + ""+x.health);
+                    x.strike = x.strike-1;
+                    System.out.println("Your strike level is now " + ""+x.strike);
                     ans = in.nextLine();
                 }
             }

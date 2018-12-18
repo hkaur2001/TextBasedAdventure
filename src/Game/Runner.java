@@ -19,11 +19,11 @@ public class Runner {
         Scanner in = new Scanner(System.in);
         System.out.print("Hi Student! In this game, try to collect your hw and get a hall pass to avoid getting bad strikes.  "+"\n");
         System.out.print("You are going through the hallway and trying to visit teachers to validate your hw completion"+"\n");
-        System.out.print("For credit for hw answer the questions correctly or get a negative strike reducing strike score by 2"+"\n");
+        System.out.print("For credit for hw answer the questions correctly or get a negative strike reducing strike score by 1"+"\n");
         System.out.print("When you get to a Dean interaction answer their questions correctly to avoid getting strikes"+"\n");
-        System.out.print("You start with 10 possible strikes with each wrong answer as -2.  If you hit zero game ends you are a bad student;("+"\n");
+        System.out.print("You start with 10 possible strikes with each wrong answer as -1.  If you hit zero game ends you are a bad student;("+"\n");
         /*
-        Game operates
+        Game begins
          */
         while(gameOn)
         {
@@ -101,8 +101,7 @@ public class Runner {
         return true;
     }
     /*
-    Turns off game
-     */
+game ends     */
     public static void gameOff()
     {
         gameOn = false;
