@@ -5,7 +5,7 @@ import People.Person;
 import java.util.Scanner;
 
     public class DeanRoom extends Room {
-        boolean alive = true;
+        boolean strikesavailable = true;
         public DeanRoom(int x, int y){
             super(x,y);
     }
@@ -38,7 +38,7 @@ import java.util.Scanner;
                 }
                 else if (ans.equals(math[1][rand])){
                     System.out.println("Good job, you're a good student :)");
-                    alive = false;
+                    strikesavailable = false;
                     correctAnswer=true;
                 } else {
                     System.out.println("Keep trying!");
@@ -56,7 +56,7 @@ import java.util.Scanner;
     Prints dean on board
      */
     public String toString(){
-        if (alive){
+        if (strikesavailable){
             return "[D]";
         } else {
             return "[#}";

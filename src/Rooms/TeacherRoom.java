@@ -12,7 +12,7 @@ import org.omg.CORBA.SystemException;
 import java.util.Scanner;
 
 public class TeacherRoom extends Room  {
-    boolean alive = true;
+    boolean strikesavailable = true;
     public TeacherRoom(int x, int y){
         super(x,y);
     }
@@ -44,7 +44,7 @@ public class TeacherRoom extends Room  {
                 }
                 else if (ans.equals(math[1][rand])){
                     System.out.println("Good job, your teacher is satisfied!");
-                    alive = false;
+                    strikesavailable = false;
                     correctAnswer=true;
                 } else {
                     System.out.println("Try again!");
@@ -62,7 +62,7 @@ public class TeacherRoom extends Room  {
     Prints Teacher on board
      */
     public String toString(){
-        if (alive){
+        if (strikesavailable){
             return "[T]";
         } else {
             return "[#]";

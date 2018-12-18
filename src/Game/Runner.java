@@ -17,11 +17,11 @@ public class Runner {
         Person player1 = new Person(0,0);
         map1[0][0].enterRoom(player1);
         Scanner in = new Scanner(System.in);
-        System.out.print("Hello! In this game, you are trying to get to math class but you do not have a hall pass so you do not want to get caught by one of the deans.  move around the board, and collect two keys, the ZombieKey and the GhostKey!"+"\n");
-        System.out.print("Then, find all the rooms containing zombies and ghosts!"+"\n");
-        System.out.print("To defeat them, answer their math question!"+"\n");
-        System.out.print("You start with a 10 health bar, everytime you get a question wrong, it decreases by 2. It's game over if you die!"+"\n");
-        System.out.print("To win, defeat all zombies and ghosts! Good luck!"+"\n");
+        System.out.print("Hi Student! In this game, try to collect your hw and get a hall pass to avoid getting bad strikes.  "+"\n");
+        System.out.print("You are going through the hallway and trying to visit teachers to validate your hw completion"+"\n");
+        System.out.print("For credit for hw answer the questions correctly or get a negative strike reducing strike score by 2"+"\n");
+        System.out.print("When you get to a Dean interaction answer their questions correctly to avoid getting strikes"+"\n");
+        System.out.print("You start with 10 possible strikes with each wrong answer as -2.  If you hit zero game ends you are a bad student;("+"\n");
         /*
         Game operates
          */

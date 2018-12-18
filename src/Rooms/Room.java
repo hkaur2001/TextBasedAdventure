@@ -19,7 +19,7 @@ public class Room {
      */
     public void enterRoom(Person x)
     {
-        System.out.println("You entered an empty room no dean to be scared of here!");
+        System.out.println("You entered an empty room no dean or teacher to be worry about here!");
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
